@@ -3,7 +3,10 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 
-const navigation = [{ id: 1, title: 'Home', link: '/' }]
+const navigation = [
+	{ id: 1, title: 'Home', link: '/' },
+	{ id: 5, title: 'Contact', link: '/contact' },
+]
 
 export default function Navbar(): JSX.Element {
 	const [nav, setNav] = useState(false)
