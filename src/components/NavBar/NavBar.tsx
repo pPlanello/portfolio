@@ -5,6 +5,7 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 
 const navigation = [
 	{ id: 1, title: 'Home', link: '/' },
+	{ id: 2, title: 'Projects', link: '/projects' },
 	{ id: 5, title: 'Contact', link: '/contact' },
 ]
 
