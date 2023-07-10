@@ -1,6 +1,11 @@
-import { getImageURLFromProjectRepository } from '@/shared/service/gitHubService'
+import {
+	getBranchesBy,
+	getCommitsBy,
+	getImageURLFromProjectRepository,
+} from '@/shared/service/gitHubService'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import { IoMdGitCommit, IoMdGitBranch } from 'react-icons/io'
 
 interface Props {
 	id: number
@@ -16,8 +21,27 @@ export default function CardProjects(props: Props): JSX.Element {
 		getImageURLFromProjectRepository(props.owner, props.name),
 	)
 
+	const [commits, setCommits] = useState(0)
+	const [branches, setBranches] = useState(0)
+
 	useEffect(() => {
 		setImageSrc(getImageURLFromProjectRepository(props.owner, props.name))
+
+		getCommitsBy(props.owner, props.name).then(response => {
+			if (response.status !== 200) {
+				setCommits(1)
+			}
+
+			setCommits(response.data.length)
+		})
+
+		getBranchesBy(props.owner, props.name).then(response => {
+			if (response.status !== 200) {
+				setBranches(1)
+			}
+
+			setBranches(response.data.length)
+		})
 	}, [props.owner, props.name])
 
 	return (
@@ -42,6 +66,14 @@ export default function CardProjects(props: Props): JSX.Element {
 						{topic}
 					</span>
 				))}
+			</div>
+			<div className="px-6 pt-4 pb-2">
+				<span className="px-3">
+					<IoMdGitCommit size={5} /> {commits}
+				</span>
+				<span className="px-3">
+					<IoMdGitBranch size={5} /> {branches}
+				</span>
 			</div>
 		</div>
 	)

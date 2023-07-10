@@ -35,65 +35,33 @@ export interface Repository {
   is_template:                 boolean;
   web_commit_signoff_required: boolean;
   topics:                      string[];
-  visibility:                  Visibility;
+  visibility:                  string;
   forks:                       number;
   open_issues:                 number;
   watchers:                    number;
-  default_branch:              DefaultBranch;
+  default_branch:              string;
   permissions:                 Permissions;
 }
 
-enum DefaultBranch {
-  Master = "master",
-}
-
 interface Owner {
-  login:               Login;
+  login:               string;
   id:                  number;
-  node_id:             NodeID;
+  node_id:             string;
   avatar_url:          string;
   gravatar_id:         string;
   url:                 string;
   html_url:            string;
   followers_url:       string;
-  following_url:       FollowingURL;
-  gists_url:           GistsURL;
-  starred_url:         StarredURL;
+  following_url:       string;
+  gists_url:           string;
+  starred_url:         string;
   subscriptions_url:   string;
   organizations_url:   string;
   repos_url:           string;
-  events_url:          EventsURL;
+  events_url:          string;
   received_events_url: string;
-  type:                Type;
+  type:                string;
   site_admin:          boolean;
-}
-
-enum EventsURL {
-  HTTPSAPIGithubCOMUsersPPlanelloEventsPrivacy = "https://api.github.com/users/pPlanello/events{/privacy}",
-}
-
-enum FollowingURL {
-  HTTPSAPIGithubCOMUsersPPlanelloFollowingOtherUser = "https://api.github.com/users/pPlanello/following{/other_user}",
-}
-
-enum GistsURL {
-  HTTPSAPIGithubCOMUsersPPlanelloGistsGistID = "https://api.github.com/users/pPlanello/gists{/gist_id}",
-}
-
-enum Login {
-  PPlanello = "pPlanello",
-}
-
-enum NodeID {
-  MDQ6VXNlcjM2NDcyNjI0 = "MDQ6VXNlcjM2NDcyNjI0",
-}
-
-enum StarredURL {
-  HTTPSAPIGithubCOMUsersPPlanelloStarredOwnerRepo = "https://api.github.com/users/pPlanello/starred{/owner}{/repo}",
-}
-
-enum Type {
-  User = "User",
 }
 
 interface Permissions {
@@ -102,8 +70,4 @@ interface Permissions {
   push:     boolean;
   triage:   boolean;
   pull:     boolean;
-}
-
-enum Visibility {
-  Public = "public",
 }

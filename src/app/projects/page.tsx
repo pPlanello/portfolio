@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { getAllRepositories } from '@/shared/service/gitHubService'
 import { Repository } from '@/shared/interface/repository.interface'
 import CardProjects from '@/components/CardProjects/CardProjects'
+import { dummyRepository } from '@/utils/repository-dummy'
 
 export default function ProjectsPage(): JSX.Element {
 	const [projects, setProjects] = useState<Repository[]>([])
@@ -11,10 +12,10 @@ export default function ProjectsPage(): JSX.Element {
 	useEffect(() => {
 		getAllRepositories('pPlanello')
 			.then(response => {
-				console.log(response)
-				const data = response.data
-				console.log(data)
-				setProjects(data)
+				if (response.status !== 200) {
+					setProjects(dummyRepository)
+				}
+				setProjects(response.data)
 			})
 			.catch(error => console.error(error))
 	}, [])
