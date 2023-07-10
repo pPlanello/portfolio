@@ -1,21 +1,24 @@
+import { getImageURLFromProjectRepository } from '@/shared/service/gitHubService'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 interface Props {
 	id: number
-	srcImageURL: string
 	alt: string
 	name: string
 	description: string | null
 	topics: string[]
+	owner: string
 }
 
 export default function CardProjects(props: Props): JSX.Element {
-	const [imageSrc, setImageSrc] = useState(props.srcImageURL)
+	const [imageSrc, setImageSrc] = useState(
+		getImageURLFromProjectRepository(props.owner, props.name),
+	)
 
 	useEffect(() => {
-		setImageSrc(props.srcImageURL)
-	}, [props.srcImageURL])
+		setImageSrc(getImageURLFromProjectRepository(props.owner, props.name))
+	}, [props.owner, props.name])
 
 	return (
 		<div className="max-w-sm rounded overflow-hidden shadow-lg">
@@ -28,7 +31,7 @@ export default function CardProjects(props: Props): JSX.Element {
 			/>
 			<div className="px-6 py-4">
 				<div className="font-bold text-xl mb-2">{props.name}</div>
-				<p className="text-gray-700 text-base">{props.description}</p>I
+				<p className="text-gray-400 text-base">{props.description}</p>
 			</div>
 			<div className="px-6 pt-4 pb-2">
 				{props.topics.map(topic => (

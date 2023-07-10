@@ -26,11 +26,11 @@ export default function ProjectsPage(): JSX.Element {
 					<CardProjects
 						key={project.id}
 						id={project.id}
-						srcImageURL={project.url + '/blob/master/image/image-project.png'}
 						alt={project.name}
 						name={project.name}
 						description={project.description}
 						topics={project.topics}
+						owner={project.owner.login}
 					/>
 				))}
 		</div>

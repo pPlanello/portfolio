@@ -12,3 +12,10 @@ export const getAllRepositories = async (owner: string): Promise<OctokitResponse
     owner
   })
 }
+
+export const getImageURLFromProjectRepository = (
+	owner: string,
+	projectName: string,
+): string => {
+	return `https://raw.githubusercontent.com/${owner}/${projectName}/master/image/image-project.png`
+}
