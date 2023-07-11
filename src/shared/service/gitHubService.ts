@@ -11,7 +11,7 @@ const octokit = new Octokit({
 
 
 export const getAllRepositories = (owner: string): Promise<OctokitResponse<Repository[]>> => {
-  return octokit.request('GET /users/{owner}/repos', {
+  return octokit.request('GET /users/{owner}/repos?sort=created', {
     owner
   })
 }
