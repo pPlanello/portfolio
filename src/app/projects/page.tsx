@@ -32,6 +32,8 @@ export default function ProjectsPage(): JSX.Element {
 						description={project.description}
 						topics={project.topics}
 						owner={project.owner.login}
+						gitHubURL={project.html_url}
+						websiteURL={project.homepage}
 					/>
 				))}
 		</div>
