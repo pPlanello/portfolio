@@ -17,19 +17,19 @@ interface Props {
 }
 
 export default function CardProjects(props: Props): JSX.Element {
+	const [commits, setCommits] = useState(0)
+	const [branches, setBranches] = useState(0)
+	const [languages, setLanguages] = useState([])
 	const [imageSrc, setImageSrc] = useState(
 		getImageURLFromProjectRepository(props.owner, props.name),
 	)
-
-	const [commits, setCommits] = useState(0)
-	const [branches, setBranches] = useState(0)
 
 	useEffect(() => {
 		setImageSrc(getImageURLFromProjectRepository(props.owner, props.name))
 
 		getCommitsBy(props.owner, props.name).then(response => {
 			if (response.status !== 200) {
-				setCommits(1)
+				setCommits(0)
 			}
 
 			setCommits(response.data.length)
@@ -37,7 +37,7 @@ export default function CardProjects(props: Props): JSX.Element {
 
 		getBranchesBy(props.owner, props.name).then(response => {
 			if (response.status !== 200) {
-				setBranches(1)
+				setBranches(0)
 			}
 
 			setBranches(response.data.length)
@@ -69,10 +69,10 @@ export default function CardProjects(props: Props): JSX.Element {
 			</div>
 			<div className="px-6 pt-4 pb-2">
 				<span className="px-3">
-					<IoMdGitCommit size={5} /> {commits}
+					<IoMdGitCommit size={15} /> {commits}
 				</span>
 				<span className="px-3">
-					<IoMdGitBranch size={5} /> {branches}
+					<IoMdGitBranch size={15} /> {branches}
 				</span>
 			</div>
 		</div>
