@@ -45,7 +45,7 @@ export enum InputType {
 }
 
 export default function Input(props: Props): JSX.Element {
-	const [isValid, setIsValid] = useState(false)
+	const [isValid, setIsValid] = useState(true)
 	const [textError, setTextError] = useState('Format invalid')
 	const isTextArea = props.inputType === InputType.TextArea
 
