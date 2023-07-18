@@ -1,4 +1,5 @@
 import Navbar from '@/components/NavBar/NavBar'
+import Notification from '@/components/Notification/Notification'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -17,6 +18,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
+				<Notification />
 				<Navbar />
 				<main className="flex min-h-screen flex-col justify-between p-24">
 					{children}
