@@ -29,6 +29,7 @@ export default function ContactPage(): JSX.Element {
 			contactForm[inputValue.field] = inputValue.value
 			setContactForm(contactForm)
 		}
+
 		setIsDisabled(!isAllFieldsFilled(contactForm))
 	}
 

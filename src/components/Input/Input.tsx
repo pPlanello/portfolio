@@ -16,6 +16,7 @@ export interface InputEvaluation extends Record<string, unknown> {
 	field: string
 	value: string
 	isValid: boolean
+	event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
 }
 
 export enum InputType {
@@ -52,6 +53,7 @@ export default function Input(props: Props): JSX.Element {
 	const handlerChangeToEvaluateValue = (
 		event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
 	) => {
+		event.preventDefault()
 		const value = event.target.value
 		setIsValid(true)
 
@@ -66,7 +68,7 @@ export default function Input(props: Props): JSX.Element {
 			setTextError(errorMessage)
 		}
 
-		props.onChangeValue({ field: props.id, value, isValid })
+		props.onChangeValue({ field: props.id, value, isValid, event })
 	}
 
 	return (
