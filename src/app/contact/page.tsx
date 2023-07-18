@@ -1,7 +1,6 @@
 'use client'
 import Button from '@/components/Button/Button'
 import Input, { InputEvaluation, InputType } from '@/components/Input/Input'
-import Toast, { ToastType } from '@/components/Toast/Toast'
 import { ContactForm } from '@/shared/interface/contactForm.interface'
 import { isAllFieldsFilled } from '@/utils/forms/evaluationForm'
 import {
@@ -12,7 +11,6 @@ import {
 import { useRef, useState } from 'react'
 
 export default function ContactPage(): JSX.Element {
-	const [toastList, setToastList] = useState<ToastType[]>()
 	const [contactForm, setContactForm] = useState<ContactForm>({
 		email: '',
 		subject: '',
@@ -100,8 +98,6 @@ export default function ContactPage(): JSX.Element {
 					</div>
 				</form>
 			</div>
-
-			<Toast toastList={toastList!} autoDelete={true} autoDeleteTimeMs={5000} />
 		</>
 	)
 }
