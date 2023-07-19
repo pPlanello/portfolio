@@ -1,6 +1,5 @@
 'use client'
 import { useRef, useState } from 'react'
-import toast from 'react-hot-toast'
 
 import Button from '@/components/Button/Button'
 import Input, { InputEvaluation, InputType } from '@/components/Input/Input'
@@ -11,13 +10,21 @@ import {
 	minLength,
 	required,
 } from '@/utils/forms/functionsEvaluations'
+import {
+	toastError,
+	toastInfo,
+	toastSuccess,
+	toastWarn,
+} from '@/components/Notification/toastNotifications'
+
+const defaultForm: ContactForm = {
+	email: '',
+	subject: '',
+	message: '',
+}
 
 export default function ContactPage(): JSX.Element {
-	const [contactForm, setContactForm] = useState<ContactForm>({
-		email: '',
-		subject: '',
-		message: '',
-	})
+	const [contactForm, setContactForm] = useState<ContactForm>(defaultForm)
 	const [isDisabled, setIsDisabled] = useState<boolean>(true)
 
 	const sendButtonRef = useRef<HTMLButtonElement>(null)
@@ -44,8 +51,23 @@ export default function ContactPage(): JSX.Element {
 			.then(res => res.json())
 			.then(data => {
 				// TODO: toast
-				toast.success('Pruebilla')
-				console.log('Success:', data)
+				toastSuccess({
+					title: 'This is Success',
+					description: 'This is success about the contact',
+				})
+				toastInfo({
+					title: 'This is Info',
+					description: 'This is info about the contact',
+				})
+				toastWarn({
+					title: 'This is Warn',
+					description: 'This is warn about the contact',
+				})
+				toastError({
+					title: 'This is Error',
+					description: 'This is error about the contact',
+				})
+				setContactForm(defaultForm)
 			})
 			.catch(error => {
 				// TODO: toast
