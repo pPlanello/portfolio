@@ -6,7 +6,7 @@ export default function Notification(): JSX.Element {
 		<Toaster
 			position="top-center"
 			reverseOrder={false}
-			toastOptions={{ duration: 34897598347983457 }}
+			toastOptions={{ duration: 3000 }}
 		/>
 	)
 }
