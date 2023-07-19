@@ -12,9 +12,7 @@ import {
 } from '@/utils/forms/functionsEvaluations'
 import {
 	toastError,
-	toastInfo,
 	toastSuccess,
-	toastWarn,
 } from '@/components/Notification/toastNotifications'
 
 const defaultForm: ContactForm = {
@@ -54,14 +52,6 @@ export default function ContactPage(): JSX.Element {
 				toastSuccess({
 					title: 'This is Success',
 					description: 'This is success about the contact',
-				})
-				toastInfo({
-					title: 'This is Info',
-					description: 'This is info about the contact',
-				})
-				toastWarn({
-					title: 'This is Warn',
-					description: 'This is warn about the contact',
 				})
 				toastError({
 					title: 'This is Error',
