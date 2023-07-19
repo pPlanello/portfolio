@@ -18,6 +18,7 @@ const Button = forwardRef<HTMLButtonElement, Props>((props, forwardedRef) => {
 			ref={forwardedRef}
 			onClick={onClick}
 			disabled={isDisabled}
+			type="button"
 			{...restProps}
 		>
 			{children}
