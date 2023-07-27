@@ -20,7 +20,6 @@ const rolesJobs = [
 export default function Home() {
 	const sendButtonRef = useRef<HTMLButtonElement>(null)
 	const downloadCV = () => {
-		console.log('Downloading')
 		fetch('/api/download-cv')
 			.then(data => {
 				data
