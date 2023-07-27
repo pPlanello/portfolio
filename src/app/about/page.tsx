@@ -41,7 +41,7 @@ export default function ContactPage(): JSX.Element {
 		<div className="flex flex-col">
 			<div className="items-center">
 				<h1 className="font-bold text-3xl">Lenguage and Technologies used:</h1>
-				<Slider images={technologiesUsed} />
+				<Slider images={technologiesUsed} distancePerImage={30} />
 			</div>
 		</div>
 	)

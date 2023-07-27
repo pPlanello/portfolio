@@ -1,6 +1,6 @@
 {
 	"name": "portfolio",
-	"version": "0.6.0",
+	"version": "0.6.1",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
@@ -16,7 +16,6 @@
 		"@types/react-dom": "18.2.5",
 		"autoprefixer": "10.4.14",
 		"eslint-config-next": "13.4.5",
-		"next": "13.4.5",
 		"octokit": "^2.1.0",
 		"postcss": "8.4.24",
 		"react": "18.2.0",
