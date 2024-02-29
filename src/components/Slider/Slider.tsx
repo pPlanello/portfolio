@@ -52,7 +52,7 @@ export default function Slider(props: Props): JSX.Element {
 								className={className.slider_image}
 								style={{
 									transform: `translateZ(${z}px) translateX(${x}px) rotateY(${indexAngle}rad)`,
-									opacity: `${image.index === currentIndex ? 1 : 0.1}`,
+									opacity: `${image.index === currentIndex ? 1 : 0.02}`,
 								}}
 								src={image.src}
 								alt={image.label}

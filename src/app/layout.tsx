@@ -20,9 +20,7 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<Notification />
 				<Navbar />
-				<main className="flex min-h-screen flex-col justify-between pt-24">
-					{children}
-				</main>
+				<main className="flex min-h-screen flex-col pt-24">{children}</main>
 			</body>
 		</html>
 	)
