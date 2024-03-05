@@ -2,6 +2,7 @@ import Navbar from '@/components/NavBar/NavBar'
 import Notification from '@/components/Notification/Notification'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import DarkModeProvider from '@/components/DarkMode/DarkModeProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,9 +19,13 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<Notification />
-				<Navbar />
-				<main className="flex min-h-screen flex-col pt-24">{children}</main>
+				<DarkModeProvider>
+					<Notification />
+					<Navbar />
+					<main className="flex min-h-screen flex-col pt-24 bg-white dark:bg-gray-900">
+						{children}
+					</main>
+				</DarkModeProvider>
 			</body>
 		</html>
 	)

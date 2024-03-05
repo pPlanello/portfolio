@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+import DarkModeButton from '../DarkMode/DarkModeButton'
 
 const navigation = [
 	{ id: 1, title: 'Home', link: '/' },
@@ -36,9 +37,17 @@ export default function Navbar(): JSX.Element {
 							</Link>
 						</li>
 					))}
+					<li className="p-4">
+						<DarkModeButton />
+					</li>
 				</ul>
 
-				{/* Mobile Button */}
+				{/* Mobile DarkModeButton */}
+				<div className="block sm:hidden z-10">
+					{nav ? <DarkModeButton /> : <></>}
+				</div>
+
+				{/* Mobile MenuButton */}
 				<div onClick={handleNav} className="block sm:hidden z-10">
 					{nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
 				</div>
