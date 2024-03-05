@@ -18,15 +18,13 @@ export default function Timeline(props: Props): JSX.Element {
 			<div className="container mx-auto flex flex-col items-start md:flex-row my-1 md:my-1 overflow-y-auto h-64 scrollbar-hide">
 				{/* Title */}
 				<div className="flex flex-col w-full md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8">
-					<p className="ml-2 text-yellow-300 uppercase tracking-loose">
-						Timeline
-					</p>
-					<p className="text-3xl md:text-4xl leading-normal md:leading-relaxed mb-2">
+					<h2 className="text-3xl md:text-4xl leading-normal md:leading-relaxed mb-2">
 						{title}
-					</p>
-					<p className="text-sm md:text-base text-gray-50 mb-4">
-						{description}
-					</p>
+					</h2>
+					<h3 className="text-yellow-300 uppercase tracking-loose mb-4">
+						Timeline
+					</h3>
+					<p className="text-sm md:text-base text-gray-50">{description}</p>
 				</div>
 				{/* Timeline list */}
 				<div className="ml-0 md:ml-12 lg:w-2/3 sticky">

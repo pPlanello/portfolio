@@ -95,8 +95,8 @@ export default function Home() {
 
 	return (
 		<>
-			<section>
-				<div className="flex flex-col p-20">
+			<section className="p-20">
+				<div className="flex flex-col px-20">
 					<div className="items-center">
 						<h3 className="text-3xl">Hello, my name is</h3>
 						<h1 className="font-bold text-5xl">Pablo Planelló San Segundo</h1>
@@ -124,8 +124,8 @@ export default function Home() {
 				</div>
 			</section>
 			{/* About me */}
-			<section className="bg-white dark:bg-gray-900">
-				<div className="flex flex-col gap-12 max-w-7xl w-5/6 p-20">
+			<section className="p-20 bg-white dark:bg-gray-900">
+				<div className="flex flex-col gap-12 max-w-7xl w-5/6 px-20">
 					<div className="flex flex-col gap-3">
 						<h2 className="title text-left text-3xl">Sobre mi</h2>
 						<p className="text-lg">

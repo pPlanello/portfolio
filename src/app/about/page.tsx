@@ -72,7 +72,7 @@ export default function ContactPage(): JSX.Element {
 
 	return (
 		<>
-			<section className="p-20">
+			<section className="px-20">
 				<div className="flex flex-col">
 					<div className="items-center">
 						<Slider images={technologiesUsed} distancePerImage={30} />
@@ -81,12 +81,14 @@ export default function ContactPage(): JSX.Element {
 			</section>
 
 			{/* Timeline */}
-			<section className="p-20">
-				<Timeline
-					title="Experience & Studies"
-					description="Here’s a summary about my profesional life."
-					timelineCards={timelineCards}
-				/>
+			<section className="px-20">
+				<div className="xl:px-20 lg:px-14 md:px-5 sm:px-1">
+					<Timeline
+						title="Experience & Studies"
+						description="Here’s a summary about my profesional life."
+						timelineCards={timelineCards}
+					/>
+				</div>
 			</section>
 		</>
 	)
