@@ -106,7 +106,7 @@ export default function Home() {
 								text={rolesJobs}
 								typedSpeedMs={85}
 								isLooped={true}
-								className="text-blue-500"
+								className="text-primary-color dark:text-primary-color-dark"
 							/>
 						</h3>
 						<p>{description}</p>

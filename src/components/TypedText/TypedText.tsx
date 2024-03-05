@@ -28,5 +28,5 @@ export default function TypedText(props: Props): JSX.Element {
 		return () => typed.destroy()
 	}, [])
 
-	return <span className="text-blue-400" ref={element} />
+	return <span className={`${props.className}`} ref={element} />
 }
