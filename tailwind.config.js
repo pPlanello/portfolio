@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   darkMode: 'class',
   content: [
@@ -8,6 +9,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        // light theme
+        'main-theme': 'rgb(249 250 251)',
+        'nav-mobile-theme': 'rgb(249 250 251)',
+        'primary-color': 'rgb(255 173 0)',
+
+        // dark theme
+        'main-theme-dark': 'rgb(17 24 39)',
+        'nav-mobile-theme-dark': 'rgb(17 24 39)',
+        'primary-color-dark': 'rgb(234 179 8)',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

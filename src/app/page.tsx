@@ -124,7 +124,7 @@ export default function Home() {
 				</div>
 			</section>
 			{/* About me */}
-			<section className="p-20 bg-white dark:bg-gray-900">
+			<section className="p-20">
 				<div className="flex flex-col gap-12 max-w-7xl w-5/6 px-20">
 					<div className="flex flex-col gap-3">
 						<h2 className="title text-left text-3xl">Sobre mi</h2>

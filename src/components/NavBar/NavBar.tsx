@@ -20,16 +20,21 @@ export default function Navbar(): JSX.Element {
 
 	return (
 		<div className="fixed left-0 top-0 w-full z-10 ease-in duration-300">
-			<div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-white">
+			<div className="max-w-[1240px] m-auto flex justify-between items-center p-4">
 				<Link href="/">
-					<h1 className="font-bold text-4xl">pPlanello</h1>
+					<h1 className="font-bold text-4xl">
+						pPlanello
+						<span className="text-primary-color dark:text-primary-color-dark">
+							Dev
+						</span>
+					</h1>
 				</Link>
 
 				<ul className="hidden sm:flex">
 					{navigation.map(navigation => (
 						<li
 							key={navigation.id}
-							className="p-4 hover:text-gray-500"
+							className="p-4 hover:text-primary-color dark:hover:text-primary-color-dark"
 							onClick={handleNav}
 						>
 							<Link href={navigation.link}>
@@ -48,23 +53,25 @@ export default function Navbar(): JSX.Element {
 				</div>
 
 				{/* Mobile MenuButton */}
-				<div onClick={handleNav} className="block sm:hidden z-10">
+				<div
+					onClick={handleNav}
+					className="block sm:hidden z-10 hover:text-primary-color dark:hover:text-primary-color-dark"
+				>
 					{nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
 				</div>
 
 				{/* Mobile Menu */}
 				<div
-					className={
-						nav
-							? 'sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-gray-800 text-center ease-in duration-300'
-							: 'sm:hidden absolute top-0 right-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-gray-800 text-center ease-in duration-300'
-					}
+					className={`sm:hidden absolute top-0 bottom-0 ${
+						nav ? 'left-0 right-0' : 'right-[-100%] right-0'
+					} flex justify-center items-center w-full h-screen bg-nav-mobile-theme dark:bg-nav-mobile-theme-dark
+					text-center ease-in duration-300`}
 				>
 					<ul>
 						{navigation.map(navigation => (
 							<li
 								key={navigation.id}
-								className="p-4 text-4xl hover:text-gray-500"
+								className="p-4 text-4xl hover:text-primary-color dark:hover:text-primary-color-dark"
 								onClick={handleNav}
 							>
 								<Link href={navigation.link}>

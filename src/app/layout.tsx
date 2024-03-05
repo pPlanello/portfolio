@@ -18,13 +18,13 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body
+				className={`bg-main-theme dark:bg-main-theme-dark text-main-theme-dark dark:text-main-theme ${inter.className}`}
+			>
 				<DarkModeProvider>
 					<Notification />
 					<Navbar />
-					<main className="flex min-h-screen flex-col pt-24 bg-white dark:bg-gray-900">
-						{children}
-					</main>
+					<main className="flex min-h-screen flex-col pt-24">{children}</main>
 				</DarkModeProvider>
 			</body>
 		</html>

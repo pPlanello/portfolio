@@ -11,16 +11,16 @@ export default function DarkModeButton(): JSX.Element {
 
 		if (currentTheme === 'dark') {
 			return (
-				<IoSunnySharp
-					className="w-6 h-6 text-gray-400"
+				<IoMoon
+					className="w-6 h-6 text-main-theme"
 					role="button"
 					onClick={() => setTheme('light')}
 				/>
 			)
 		} else {
 			return (
-				<IoMoon
-					className="w-6 h-6 text-gray-900 "
+				<IoSunnySharp
+					className="w-6 h-6 text-main-theme-dark"
 					role="button"
 					onClick={() => setTheme('dark')}
 				/>

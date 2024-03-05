@@ -21,10 +21,10 @@ export default function Timeline(props: Props): JSX.Element {
 					<h2 className="text-3xl md:text-4xl leading-normal md:leading-relaxed mb-2">
 						{title}
 					</h2>
-					<h3 className="text-yellow-300 uppercase tracking-loose mb-4">
+					<h3 className="text-primary-color dark:text-primary-color-dark uppercase tracking-loose mb-4">
 						Timeline
 					</h3>
-					<p className="text-sm md:text-base text-gray-50">{description}</p>
+					<p className="text-sm md:text-base">{description}</p>
 				</div>
 				{/* Timeline list */}
 				<div className="ml-0 md:ml-12 lg:w-2/3 sticky">
@@ -54,7 +54,7 @@ export default function Timeline(props: Props): JSX.Element {
 										<div className="mb-8 flex justify-between items-center w-full right-timeline">
 											<div className="order-1 w-5/12"></div>
 											<div className="order-1  w-5/12 px-1 py-4 text-left">
-												<p className="mb-3 text-base text-yellow-300">
+												<p className="mb-3 text-base text-primary-color dark:text-primary-color-dark">
 													{timelineCard.date}
 												</p>
 												<h4 className="font-bold text-lg md:text-2xl">
@@ -63,7 +63,7 @@ export default function Timeline(props: Props): JSX.Element {
 												<h5 className="mb-3 font-bold text-lg md:text-l text-gray-400">
 													{timelineCard.subtitle}
 												</h5>
-												<p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+												<p className="text-sm md:text-base leading-snug">
 													{timelineCard.description}
 												</p>
 											</div>
@@ -72,7 +72,7 @@ export default function Timeline(props: Props): JSX.Element {
 										<div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
 											<div className="order-1 w-5/12"></div>
 											<div className="order-1 w-5/12 px-1 py-4 text-right">
-												<p className="mb-3 text-base text-yellow-300">
+												<p className="mb-3 text-base text-primary-color dark:text-primary-color-dark">
 													{timelineCard.date}
 												</p>
 												<h4 className="font-bold text-lg md:text-2xl">
@@ -81,7 +81,7 @@ export default function Timeline(props: Props): JSX.Element {
 												<h5 className="mb-3 font-bold text-lg md:text-l text-gray-400">
 													{timelineCard.subtitle}
 												</h5>
-												<p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+												<p className="text-sm md:text-base leading-snug">
 													{timelineCard.description}
 												</p>
 											</div>
