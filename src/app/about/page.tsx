@@ -49,7 +49,7 @@ export default function ContactPage(): JSX.Element {
 			</section>
 			{/* Timeline */}
 			<section className="bg-black text-white">
-				<div className="container mx-auto flex flex-col items-start md:flex-row my-1 md:my-1 overflow-y-auto h-10">
+				<div className="container mx-auto flex flex-col items-start md:flex-row my-1 md:my-1 overflow-y-auto h-64 scrollbar-hide">
 					<div className="flex flex-col w-full md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8">
 						<p className="ml-2 text-yellow-300 uppercase tracking-loose">
 							Working Process
