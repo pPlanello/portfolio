@@ -14,11 +14,7 @@ export default function TypedText(props: Props): JSX.Element {
 
 	useEffect(() => {
 		const typed = new Typed(element.current, {
-			strings: [
-				'Backend Developer',
-				'Frontend Developer',
-				'FullStack Developer',
-			],
+			strings: props.text,
 			typeSpeed: props.typedSpeedMs,
 			loop: props.isLooped,
 			startDelay: 23,
