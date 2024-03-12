@@ -3,6 +3,7 @@ import Notification from '@/components/Notification/Notification'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import DarkModeProvider from '@/components/DarkMode/DarkModeProvider'
+import Footer from '@/components/Footer/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,6 +28,7 @@ export default function RootLayout({
 					<Notification />
 					<Navbar />
 					<main className="flex min-h-screen flex-col pt-24">{children}</main>
+					<Footer />
 				</DarkModeProvider>
 			</body>
 		</html>

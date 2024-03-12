@@ -1,0 +1,10 @@
+.link_info span {
+	display: none;
+	visibility: hidden;
+}
+
+.link_info:hover > span {
+	display: inline;
+	visibility: visible;
+	position: absolute;
+}

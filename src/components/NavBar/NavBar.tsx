@@ -19,7 +19,7 @@ export default function Navbar(): JSX.Element {
 	}
 
 	return (
-		<div className="fixed left-0 top-0 w-full z-10 ease-in duration-300">
+		<nav className="fixed left-0 top-0 w-full z-10 ease-in duration-300 bg-main-theme dark:bg-main-theme-dark">
 			<div className="max-w-[1240px] m-auto flex justify-between items-center p-4">
 				<Link href="/">
 					<h1 className="font-bold text-4xl">
@@ -82,6 +82,6 @@ export default function Navbar(): JSX.Element {
 					</ul>
 				</div>
 			</div>
-		</div>
+		</nav>
 	)
 }
