@@ -40,9 +40,9 @@ export default function Footer(): JSX.Element {
 	const year = new Date().getFullYear()
 	return (
 		<footer className="bg-main-theme dark:bg-main-theme-dark pt-9">
-			<section className="flex items-center justify-center">
-				<div className="grid grid-cols-2 p-10 bg-slate-500 rounded-lg w-auto col-2">
-					<div>
+			<section className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+				<div className="grid grid-cols-2 p-10 bg-slate-500 rounded-lg w-full flex items-center justify-center">
+					<div className="justify-self-start items-start">
 						<h4 className="pb-6 text-2xl font-bold">
 							Interesting to hiring me?
 						</h4>
@@ -50,7 +50,7 @@ export default function Footer(): JSX.Element {
 							Request to meet us <IoIosArrowForward />
 						</Link>
 					</div>
-					<div className="pl-20">
+					<div className="justify-self-end items-end">
 						<BsPersonSquare size={300} />
 					</div>
 				</div>
