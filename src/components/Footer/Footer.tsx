@@ -43,7 +43,7 @@ export default function Footer(): JSX.Element {
 	return (
 		<footer className="bg-main-theme dark:bg-main-theme-dark pt-9">
 			<section className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
-				<div className="grid grid-cols-2 p-10 bg-slate-500 rounded-lg w-full flex items-center justify-center">
+				<div className="grid grid-cols-2 p-10 bg-slate-500 rounded-lg w-full items-center justify-center">
 					<div className="justify-self-start items-start">
 						<h4 className="pb-6 text-2xl font-bold">
 							Interesting to hiring me?

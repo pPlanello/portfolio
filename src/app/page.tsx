@@ -4,10 +4,14 @@ import {
 	toastError,
 	toastSuccess,
 } from '@/components/Notification/toastNotifications'
+import Link from 'next/link'
 import TypedText from '@/components/TypedText/TypedText'
 import { ImagesSlider } from '@/shared/interface/imageSlider.interface'
 import Image from 'next/image'
+import { BsPersonSquare } from 'react-icons/bs'
 import { useRef } from 'react'
+import { IoIosArrowForward } from 'react-icons/io'
+import CardStats from '@/components/CardStats/CardStats'
 
 const description =
 	"I am a Telecommunications Engineer at UPM since 2020. In 2021 I did my maste's degree in Network Engineering and Telematic Services at UPM. Now a days I am Software Developer."
@@ -53,7 +57,7 @@ const technologiesUsed: ImagesSlider[] = [
 ]
 
 export default function Home() {
-	const sendButtonRef = useRef<HTMLButtonElement>(null)
+	const downloadCvButtonRef = useRef<HTMLButtonElement>(null)
 	const downloadCV = () => {
 		fetch('/api/download-cv')
 			.then(data => {
@@ -93,10 +97,13 @@ export default function Home() {
 			})
 	}
 
+	const yearsWorked = (new Date().getFullYear() - 2019).toString()
+
 	return (
 		<>
+			{/* Intro */}
 			<section className="p-20">
-				<div className="flex flex-col px-20">
+				<div className="flex-col px-20 grid grid-cols-2">
 					<div className="items-center">
 						<h3 className="text-3xl">Hello, my name is</h3>
 						<h1 className="font-bold text-5xl">Pablo Planelló San Segundo</h1>
@@ -112,7 +119,7 @@ export default function Home() {
 						<p>{description}</p>
 						<div className="mt-4 ml-4">
 							<Button
-								ref={sendButtonRef}
+								ref={downloadCvButtonRef}
 								isPrimary={true}
 								isDisabled={false}
 								onClick={downloadCV}
@@ -120,6 +127,47 @@ export default function Home() {
 								Download CV
 							</Button>
 						</div>
+					</div>
+					<div className="justify-self-end items-end">
+						<BsPersonSquare size={300} />
+					</div>
+				</div>
+			</section>
+			{/* Jobs worked */}
+			<section className="p-20 bg-main-theme dark:bg-main-theme-dark">
+				<div className="">Jobs slider information</div>
+			</section>
+			{/* Profile stats */}
+			<section className="p-20">
+				<div className="flex flex-col">
+					<div className="px-20 grid grid-cols-3 gap-4">
+						<CardStats
+							title="Companies worked:"
+							value="2"
+							className="col-span-1"
+						/>
+						<CardStats
+							title="Studies:"
+							value="Master"
+							description=""
+							className="col-span-2"
+						/>
+					</div>
+					<div className="px-20 grid grid-cols-3">
+						<CardStats
+							title="Work experience:"
+							value={yearsWorked}
+							description="years"
+						/>
+						<div className="flex flex-col items-center m-2">
+							<BsPersonSquare size={250} />
+						</div>
+						<CardStats title="Technologies learned:" value="+10" />
+					</div>
+					<div className="px-20 grid grid-cols-3">
+						<CardStats title="Profesional project:" value="4" />
+						<CardStats title="Workmates:" value=">30" description="people" />
+						<CardStats title="Personal project:" value="+14" />
 					</div>
 				</div>
 			</section>

@@ -14,7 +14,7 @@ const Button = forwardRef<HTMLButtonElement, Props>((props, forwardedRef) => {
 	return (
 		<button
 			className={`${isPrimary ? 'bg-gray-800' : ''}
-				disabled:cursor-not-allowed focus:outline-none  disabled:opacity-75 px-6 py-2 text-sm rounded-md shadow-md font-semibold text-gray-50`}
+				flex justify-between items-center disabled:cursor-not-allowed focus:outline-none disabled:opacity-75 px-6 py-2 text-sm rounded-md shadow-md font-semibold text-gray-50`}
 			ref={forwardedRef}
 			onClick={onClick}
 			disabled={isDisabled}
