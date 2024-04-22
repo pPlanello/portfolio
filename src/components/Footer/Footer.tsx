@@ -12,26 +12,28 @@ const navigation = [
 	{ id: 3, title: 'About', link: '/about' },
 	{ id: 5, title: 'Contact', link: '/contact' },
 ]
-
+const subjectEmail = 'Job offer of the company: '
 const iconsFooter = [
 	{
 		id: 1,
 		title: 'Email',
 		image: <IoIosMail size={25} />,
+		link: `mailto:pablo.planello@gmail.com?Subject=${subjectEmail}`,
+		about: 'Send email offer',
 	},
 	{
 		id: 2,
 		title: 'Linkedin',
 		image: <FaLinkedin size={25} />,
 		link: 'https://es.linkedin.com/in/pablo-planell%C3%B3-san-segundo-upm',
-		tag: '',
+		about: 'Redirect to LinkeIn profile',
 	},
 	{
 		id: 3,
 		title: 'GitHub',
 		image: <IoLogoGithub size={25} />,
 		link: 'https://github.com/pPlanello',
-		tag: '',
+		about: 'Redirect to GitHub profile',
 	},
 ]
 
@@ -84,6 +86,7 @@ export default function Footer(): JSX.Element {
 									<Link
 										className={`text-gray-400 hover:text-gray-500 ${className.link_info} items-center`}
 										href={icon.link}
+										about={icon.about}
 										target="_blank"
 									>
 										{icon.image}
@@ -108,12 +111,12 @@ export default function Footer(): JSX.Element {
 					</div>
 				</div>
 				<div className="grid grid-cols-3">
-					<div className="flex flex-col flex-initial justify-self-start space-x-6 items-start">
+					<div className="flex flex-col flex-initial justify-self-start items-start">
 						<p className="text-base leading-6 text-gray-400">
-							© {year}, Pablo Planello
+							{year}, Pablo Planello
 						</p>
 						<p className="text-base leading-6 text-gray-600">
-							All Rights Reserved
+							All Rights For Community
 						</p>
 					</div>
 					<div className="flex justify-self-center space-x-6 items-end">
@@ -124,7 +127,7 @@ export default function Footer(): JSX.Element {
 							</span>
 						</h1>
 					</div>
-					<div className="flex flex-col flex-initial justify-self-end space-x-6 items-end">
+					<div className="flex flex-col flex-initial justify-self-end items-end">
 						<p className="text-base leading-6 text-gray-400">
 							Created with love
 						</p>
