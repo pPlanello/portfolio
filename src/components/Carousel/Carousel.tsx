@@ -34,12 +34,12 @@ export default function Carousel(props: Props): JSX.Element {
 		<>
 			<div className="overflow-hidden relative">
 				{/* Slides */}
-				<div className="flex">
+				<div className="w-full flex flex-row">
 					{props.slides &&
 						props.slides.map((slide: any, index: number) => (
 							<div
 								key={index}
-								className="h-full transition-transform ease-out duration-500"
+								className="w-full flex-shrink-0 h-full transition-transform ease-out duration-500"
 								style={{ transform: `translateX(-${currentSlide * 100}%)` }}
 							>
 								{slide}
