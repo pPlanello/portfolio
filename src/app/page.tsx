@@ -4,14 +4,15 @@ import {
 	toastError,
 	toastSuccess,
 } from '@/components/Notification/toastNotifications'
-import Link from 'next/link'
 import TypedText from '@/components/TypedText/TypedText'
 import { ImagesSlider } from '@/shared/interface/imageSlider.interface'
 import Image from 'next/image'
 import { BsPersonSquare } from 'react-icons/bs'
 import { useRef } from 'react'
-import { IoIosArrowForward } from 'react-icons/io'
 import CardStats from '@/components/CardStats/CardStats'
+import Carousel from '@/components/Carousel/Carousel'
+import { Slide } from '@/shared/interface/carousel.interface'
+import CompanySlide from '@/components/CompanySlide/CompanySlide'
 
 const description =
 	"I am a Telecommunications Engineer at UPM since 2020. In 2021 I did my maste's degree in Network Engineering and Telematic Services at UPM. Now a days I am Software Developer."
@@ -99,6 +100,27 @@ export default function Home() {
 
 	const yearsWorked = (new Date().getFullYear() - 2019).toString()
 
+	const companySlides: Array<JSX.Element> = [
+		<CompanySlide
+			key={1}
+			id={1}
+			title={'BBVA'}
+			description={'BBVA Description'}
+		/>,
+		<CompanySlide
+			key={2}
+			id={2}
+			title={'GMV'}
+			description={'GMV Description'}
+		/>,
+		<CompanySlide
+			key={3}
+			id={3}
+			title={'Prueba'}
+			description={'Prueba Description'}
+		/>,
+	]
+
 	return (
 		<>
 			{/* Intro */}
@@ -135,7 +157,11 @@ export default function Home() {
 			</section>
 			{/* Jobs worked */}
 			<section className="p-20 bg-main-theme dark:bg-main-theme-dark">
-				<div className="">Jobs slider information</div>
+				<Carousel
+					autoSlide={true}
+					autoSlideInterval={7000}
+					slides={companySlides}
+				/>
 			</section>
 			{/* Profile stats */}
 			<section className="p-20">
