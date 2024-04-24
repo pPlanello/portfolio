@@ -47,7 +47,7 @@ export default function Carousel(props: Props): JSX.Element {
 						))}
 				</div>
 				{/* Buttons actions Slider */}
-				<div className="absolute inset-0 flex items-center justify-between p-4">
+				<div className="absolute z-10 inset-0 flex items-center justify-between p-4">
 					<button
 						onClick={prevSlide}
 						className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
@@ -61,19 +61,20 @@ export default function Carousel(props: Props): JSX.Element {
 						<GoChevronRight size={40} />
 					</button>
 				</div>
-				{/* Circle index */}
-				<div className="mt-4 bottom-4 right-0 left-0">
-					<div className="flex items-center justify-center gap-2">
-						{props.slides &&
-							props.slides.map((_: any, i: Key) => (
-								<div
-									key={i}
-									className={`transition-all w-3 h-3 bg-white rounded-full ${
-										currentSlide === i ? 'p-2' : 'bg-opacity-50'
-									}`}
-								/>
-							))}
-					</div>
+			</div>
+			{/* Circle index */}
+			<div className="z-100 mt-8 right-0 left-0">
+				<div className="flex items-center justify-center gap-2">
+					{props.slides &&
+						props.slides.map((_: any, i: number) => (
+							<div
+								key={i}
+								className={`transition-all w-3 h-3 bg-white rounded-full ${
+									currentSlide === i ? 'p-2' : 'bg-opacity-50'
+								}`}
+								onClick={() => setCurrentSlide(i)}
+							/>
+						))}
 				</div>
 			</div>
 		</>
