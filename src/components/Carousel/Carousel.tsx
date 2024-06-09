@@ -31,8 +31,8 @@ export default function Carousel(props: Props): JSX.Element {
 	}, [currentSlide])
 
 	return (
-		<>
-			<div className="overflow-hidden relative">
+		<div className="w-full h-full">
+			<div className="overflow-hidden relative bg-gray-100 rounded-lg">
 				{/* Slides */}
 				<div className="w-full flex flex-row">
 					{props.slides &&
@@ -47,7 +47,7 @@ export default function Carousel(props: Props): JSX.Element {
 						))}
 				</div>
 				{/* Buttons actions Slider */}
-				<div className="absolute z-10 inset-0 flex items-center justify-between p-4">
+				<div className="absolute z-10 inset-0 flex items-center justify-between">
 					<button
 						onClick={prevSlide}
 						className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
@@ -77,6 +77,6 @@ export default function Carousel(props: Props): JSX.Element {
 						))}
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }

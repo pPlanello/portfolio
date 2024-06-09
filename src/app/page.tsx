@@ -11,7 +11,6 @@ import { BsPersonSquare } from 'react-icons/bs'
 import { useRef } from 'react'
 import CardStats from '@/components/CardStats/CardStats'
 import Carousel from '@/components/Carousel/Carousel'
-import { Slide } from '@/shared/interface/carousel.interface'
 import CompanySlide from '@/components/CompanySlide/CompanySlide'
 
 const description =
@@ -158,7 +157,7 @@ export default function Home() {
 			{/* Jobs worked */}
 			<section className="p-20 bg-main-theme dark:bg-main-theme-dark">
 				<Carousel
-					autoSlide={true}
+					autoSlide={false}
 					autoSlideInterval={7000}
 					slides={companySlides}
 				/>
