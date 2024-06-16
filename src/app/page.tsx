@@ -105,18 +105,14 @@ export default function Home() {
 			id={1}
 			title={'BBVA'}
 			description={'BBVA Description'}
+			timeWorked={'2022-Actually'}
 		/>,
 		<CompanySlide
 			key={2}
 			id={2}
 			title={'GMV'}
 			description={'GMV Description'}
-		/>,
-		<CompanySlide
-			key={3}
-			id={3}
-			title={'Prueba'}
-			description={'Prueba Description'}
+			timeWorked={'2019-2020'}
 		/>,
 	]
 
