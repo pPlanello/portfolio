@@ -6,12 +6,12 @@ import {
 } from '@/components/Notification/toastNotifications'
 import TypedText from '@/components/TypedText/TypedText'
 import { ImagesSlider } from '@/shared/interface/imageSlider.interface'
-import Image from 'next/image'
 import { BsPersonSquare } from 'react-icons/bs'
 import { useRef } from 'react'
 import CardStats from '@/components/CardStats/CardStats'
 import Carousel from '@/components/Carousel/Carousel'
 import CompanySlide from '@/components/CompanySlide/CompanySlide'
+import Slider from '@/components/Slider/Slider'
 
 const description =
 	"I am a Telecommunications Engineer at UPM since 2020. In 2021 I did my maste's degree in Network Engineering and Telematic Services at UPM. Now a days I am Software Developer."
@@ -26,33 +26,53 @@ const rolesJobs = [
 const technologiesUsed: ImagesSlider[] = [
 	{
 		index: 0,
-		src: '/images/spring-boot.png',
-		label: 'Spring Boot',
+		src: '/images/technologies/spring.svg',
+		label: 'Spring Framework',
 	},
 	{
 		index: 1,
-		src: '/images/angular.png',
-		label: 'Angular',
+		src: '/images/technologies/aws.svg',
+		label: 'Amazon Web Services',
 	},
 	{
 		index: 2,
-		src: '/images/react.png',
+		src: '/images/technologies/reactjs.svg',
 		label: 'React JS',
 	},
 	{
 		index: 3,
-		src: '/images/python.png',
+		src: '/images/technologies/python.svg',
 		label: 'Python',
 	},
 	{
 		index: 4,
-		src: '/images/aws.png',
-		label: 'AWS',
+		src: '/images/technologies/typescript.svg',
+		label: 'TypeScript',
 	},
 	{
 		index: 5,
-		src: '/images/git.png',
+		src: '/images/technologies/git.svg',
 		label: 'Git',
+	},
+	{
+		index: 6,
+		src: '/images/technologies/docker.svg',
+		label: 'Docker',
+	},
+	{
+		index: 7,
+		src: '/images/technologies/java.svg',
+		label: 'Java',
+	},
+	{
+		index: 8,
+		src: '/images/technologies/nextjs.svg',
+		label: 'Next JS',
+	},
+	{
+		index: 9,
+		src: '/images/technologies/angular.svg',
+		label: 'Angular',
 	},
 ]
 
@@ -103,14 +123,14 @@ export default function Home() {
 		<CompanySlide
 			key={1}
 			id={1}
-			title={'BBVA'}
+			title={'bbva'}
 			description={'BBVA Description'}
 			timeWorked={'2022-Actually'}
 		/>,
 		<CompanySlide
 			key={2}
 			id={2}
-			title={'GMV'}
+			title={'gmv'}
 			description={'GMV Description'}
 			timeWorked={'2019-2020'}
 		/>,
@@ -150,8 +170,20 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
+			{/* Technologies Slider */}
+			<section className="p-5 bg-main-theme dark:bg-main-theme-dark">
+				<div className="flex flex-col">
+					<div className="items-center">
+						<Slider
+							images={technologiesUsed}
+							distancePerImage={90}
+							backgroundColor="bg-main-theme dark:bg-main-1-theme-dark"
+						/>
+					</div>
+				</div>
+			</section>
 			{/* Jobs worked */}
-			<section className="p-20 bg-main-theme dark:bg-main-theme-dark">
+			<section className="p-20 bg-main-theme dark:bg-main-1-theme-dark">
 				<Carousel
 					autoSlide={false}
 					autoSlideInterval={7000}
@@ -159,7 +191,7 @@ export default function Home() {
 				/>
 			</section>
 			{/* Profile stats */}
-			<section className="p-20">
+			<section className="p-20 bg-main-theme dark:bg-main-theme-dark">
 				<div className="flex flex-col">
 					<div className="px-20 grid grid-cols-3 gap-4">
 						<CardStats
@@ -189,61 +221,6 @@ export default function Home() {
 						<CardStats title="Profesional project:" value="4" />
 						<CardStats title="Workmates:" value=">30" description="people" />
 						<CardStats title="Personal project:" value="+14" />
-					</div>
-				</div>
-			</section>
-			{/* About me */}
-			<section className="p-20">
-				<div className="flex flex-col gap-12 max-w-7xl w-5/6 px-20">
-					<div className="flex flex-col gap-3">
-						<h2 className="title text-left text-3xl">Sobre mi</h2>
-						<p className="text-lg">
-							Hola me llamo Pablo Planelló San Segundo y soy un desarrollador de
-							la pera me gusta que no se entienda una mierda estas pruebas
-						</p>
-					</div>
-					<div className="flex flex-col gap-12 lg:flex-row lg:gap-20">
-						{/* Studies */}
-						<div className="flex flex-col gap-3">
-							<h3 className="text-left text-2xl font-medium">Estudios:</h3>
-							<ul className="marker:text-primary list-disc text-lg flex flex-wrap flew-row gap-5 lg:flex-col lg:gap-4">
-								<li className="ml-5">
-									Máster de Ingenería
-									<span className="italic opacity-70 text-base block">
-										Universidad Politécnica de Madrid
-										<span className="block">2021</span>
-									</span>
-								</li>
-								<li className="ml-5">
-									Grado de Ingenería
-									<span className="italic opacity-70 text-base block">
-										Universidad Politécnica de Madrid
-										<span className="block">2020</span>
-									</span>
-								</li>
-							</ul>
-						</div>
-						{/* Technologies */}
-						<div className="flex flex-col gap-5">
-							<h3 className="text-left text-2xl font-medium">Tecnologías:</h3>
-							<div className="flex flex-wrap gap-6">
-								{technologiesUsed.map(image => (
-									<div
-										key={image.index}
-										className="flex flex-col items-center justify-center gap-1"
-									>
-										<Image
-											key={image.index}
-											src={image.src}
-											alt={image.label}
-											width={44}
-											height={48}
-										/>
-										<p className="text-center">{image.label}</p>
-									</div>
-								))}
-							</div>
-						</div>
 					</div>
 				</div>
 			</section>

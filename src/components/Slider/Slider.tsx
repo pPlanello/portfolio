@@ -7,6 +7,7 @@ import { ImagesSlider } from '@/shared/interface/imageSlider.interface'
 interface Props {
 	images: ImagesSlider[]
 	distancePerImage?: number
+	backgroundColor?: string
 }
 
 export default function Slider(props: Props): JSX.Element {
@@ -49,7 +50,7 @@ export default function Slider(props: Props): JSX.Element {
 						return (
 							<Image
 								key={image.index}
-								className={className.slider_image}
+								className={`${className.slider_image} ${props.backgroundColor}`}
 								style={{
 									transform: `translateZ(${z}px) translateX(${x}px) rotateY(${indexAngle}rad)`,
 									opacity: `${image.index === currentIndex ? 1 : 0.02}`,
