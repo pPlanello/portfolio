@@ -9,33 +9,53 @@ export default function ContactPage(): JSX.Element {
 	const technologiesUsed: ImagesSlider[] = [
 		{
 			index: 0,
-			src: '/images/spring-boot.png',
-			label: 'Spring Boot',
+			src: '/images/technologies/spring.svg',
+			label: 'Spring Framework',
 		},
 		{
 			index: 1,
-			src: '/images/angular.png',
-			label: 'Angular',
+			src: '/images/technologies/aws.svg',
+			label: 'Amazon Web Services',
 		},
 		{
 			index: 2,
-			src: '/images/react.png',
+			src: '/images/technologies/reactjs.svg',
 			label: 'React JS',
 		},
 		{
 			index: 3,
-			src: '/images/python.png',
+			src: '/images/technologies/python.svg',
 			label: 'Python',
 		},
 		{
 			index: 4,
-			src: '/images/aws.png',
-			label: 'Amazon Web Services',
+			src: '/images/technologies/typescript.svg',
+			label: 'TypeScript',
 		},
 		{
 			index: 5,
-			src: '/images/git.png',
+			src: '/images/technologies/git.svg',
 			label: 'Git',
+		},
+		{
+			index: 6,
+			src: '/images/technologies/docker.svg',
+			label: 'Docker',
+		},
+		{
+			index: 7,
+			src: '/images/technologies/java.svg',
+			label: 'Java',
+		},
+		{
+			index: 8,
+			src: '/images/technologies/nextjs.svg',
+			label: 'Next JS',
+		},
+		{
+			index: 9,
+			src: '/images/technologies/angular.svg',
+			label: 'Angular',
 		},
 	]
 
